@@ -15,8 +15,9 @@ install_if_missing("openpyxl")
 import rispy
 import pandas as pd
 
-input_file = "references.ris"
-output_file = "references.xlsx"
+###put the .ris as the input file path and the desired .xlsx as the output file path, then manually change to csv file if needed###
+input_file = r"D:\flinders\REMS the accuracy of diagnostic tests for Osteoporosis\Search results\OVID.ris"
+output_file = r"D:\flinders\REMS the accuracy of diagnostic tests for Osteoporosis\Search results\ovid3.xlsx"
 
 with open(input_file, "r", encoding="utf-8") as ris_fp:
     entries = rispy.load(ris_fp)
@@ -25,3 +26,4 @@ df = pd.DataFrame(entries)
 df.to_excel(output_file, index=False)
 
 print(f"✅ Converted '{input_file}' → '{output_file}' successfully!")
+
